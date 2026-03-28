@@ -47,7 +47,7 @@ That's it. The widget fetches data from the ColorFYI API and renders with full s
 | `data-colorfyi` | entity, compare, glossary, guide, search, tooltip, [tools] | required | Widget type |
 | `data-slug` | e.g. "colors" | — | Entity slug from the ColorFYI database |
 | `data-theme` | light, dark, sepia, auto | light | Visual theme (`auto` follows OS preference) |
-| `data-style` | modern, minimal | modern | Widget design style |
+| `data-styleVariant` | modern, minimal | modern | Widget design style |
 | `data-size` | default, compact, large | default | Widget size |
 | `data-placeholder` | any string | "Search Colors..." | Search box placeholder |
 
@@ -71,10 +71,10 @@ That's it. The widget fetches data from the ColorFYI API and renders with full s
 
 ```html
 <!-- Modern (default) — clean lines, rounded corners, accent gradients -->
-<div data-colorfyi="entity" data-slug="colors" data-style="modern"></div>
+<div data-colorfyi="entity" data-slug="colors" data-styleVariant="modern"></div>
 
 <!-- Minimal — subtle borders, flat design, no gradients -->
-<div data-colorfyi="entity" data-slug="colors" data-style="minimal"></div>
+<div data-colorfyi="entity" data-slug="colors" data-styleVariant="minimal"></div>
 ```
 
 ## Web Components (Custom Elements)
