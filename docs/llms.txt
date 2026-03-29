@@ -1,21 +1,55 @@
 # ColorFYI Embed Widget
 
-> Embeddable ColorFYI widgets for any website. Zero dependencies, Shadow DOM isolation, 4 themes (light/dark/sepia/auto).
+> Color conversion, WCAG contrast, 16.7M hex colors. Embeddable widgets for any website. Zero dependencies, Shadow DOM isolation.
 
 ## Quick Start
 
-Add to any HTML page:
-- Script: <script src="https://cdn.jsdelivr.net/npm/colorfyi-embed@1/dist/embed.min.js"></script>
+```html
+<script src="https://cdn.jsdelivr.net/npm/colorfyi-embed@1/dist/embed.min.js"></script>
+<div data-colorfyi="converter" data-slug="example"></div>
+```
+
+## Available Widget Types (11)
+
+- entity: `data-colorfyi="entity"`
+- glossary: `data-colorfyi="glossary"`
+- guide: `data-colorfyi="guide"`
+- compare: `data-colorfyi="compare"`
+- search: `data-colorfyi="search"`
+- converter (interactive): `data-colorfyi="converter"`
+- contrast (interactive): `data-colorfyi="contrast"`
+- harmony (interactive): `data-colorfyi="harmony"`
+- colorblind (interactive): `data-colorfyi="colorblind"`
+- shades (interactive): `data-colorfyi="shades"`
+- swatch (interactive): `data-colorfyi="swatch"`
+
+## Customization
+
+- **Themes**: light, dark, sepia, auto (follows system preference)
+- **Sizes**: compact (280px), default (420px), large (720px)
+- **Styles**: modern, classic
+
+```html
+<div data-colorfyi="converter" data-slug="example"
+     data-theme="auto" data-size="compact" data-style-variant="modern"></div>
+```
+
+## Integration Methods
+
+1. **Script tag** (recommended): `<script src="https://cdn.jsdelivr.net/npm/colorfyi-embed@1/dist/embed.min.js"></script>`
+2. **iframe**: `https://colorfyi.com/iframe/entity/{slug}/`
+3. **oEmbed**: `https://colorfyi.com/oembed?url={page_url}&format=json`
+4. **Badge**: `https://colorfyi.com/badge/site.svg`
 
 ## Links
 
 - Main site: https://colorfyi.com
 - Widget docs: https://widget.colorfyi.com
-- npm: https://www.npmjs.com/package/colorfyi-embed
+- API documentation: https://colorfyi.com/developers/
+- npm package: https://www.npmjs.com/package/colorfyi-embed
 - GitHub: https://github.com/fyipedia/colorfyi-embed
-- API: https://colorfyi.com/developers/
 
-## Creative FYI Widget Family
+## Creative FYI Widget Network
 
 - [FontFYI Widget](https://widget.fontfyi.com)
 - [EmojiFYI Widget](https://widget.emojifyi.com)
