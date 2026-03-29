@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# ColorFYI Embed Widget
+# Main site: https://colorfyi.com
+# Widget docs: https://widget.colorfyi.com
+# npm: https://www.npmjs.com/package/colorfyi-embed
