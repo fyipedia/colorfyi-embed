@@ -858,7 +858,7 @@ function renderError(container, message, config) {
   container.innerHTML = `
     <div class="creativefyi-error">
       <p>${message}</p>
-      <a href="https://${config.domain}" target="_blank" rel="noopener">
+      <a href="https://${config.domain}" target="_blank" rel="nofollow noopener">
         Visit ${config.name}
       </a>
     </div>
@@ -868,7 +868,7 @@ var externalLinkIcon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 
 var copyIcon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>`;
 var checkIcon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>`;
 function poweredByHTML(config) {
-  return `<span class="creativefyi-powered">Powered by <a href="https://${config.domain}" target="_blank" rel="noopener">${config.name}</a></span>`;
+  return `<span class="creativefyi-powered">Powered by <a href="https://${config.domain}" target="_blank" rel="nofollow noopener">${config.name}</a></span>`;
 }
 function bindCopyButton(btn, text) {
   btn.addEventListener("click", () => {
@@ -971,7 +971,7 @@ function renderColor(container, data, config) {
       ${data.source ? `<div class="creativefyi-kv-row"><span class="creativefyi-kv-key">Source</span><span class="creativefyi-kv-val"><span class="creativefyi-badge">${escapeHTML(data.source)}</span></span></div>` : ""}
     </div>
     <div class="creativefyi-actions">
-      <a class="creativefyi-link" href="${colorUrl}" target="_blank" rel="noopener">
+      <a class="creativefyi-link" href="${colorUrl}" target="_blank" rel="nofollow noopener">
         View on ${escapeHTML(config.name)} ${externalLinkIcon}
       </a>
     </div>
@@ -1000,7 +1000,7 @@ function renderFont(container, data, config) {
       ${desc ? `<p class="creativefyi-summary">${escapeHTML(desc)}</p>` : ""}
     </div>
     <div class="creativefyi-actions">
-      <a class="creativefyi-link" href="${fontUrl}" target="_blank" rel="noopener">
+      <a class="creativefyi-link" href="${fontUrl}" target="_blank" rel="nofollow noopener">
         View on ${escapeHTML(config.name)} ${externalLinkIcon}
       </a>
     </div>
@@ -1038,7 +1038,7 @@ function renderEmoji(container, data, config) {
       ${data.category ? `<div class="creativefyi-kv-row"><span class="creativefyi-kv-key">Category</span><span class="creativefyi-kv-val"><span class="creativefyi-badge">${escapeHTML(data.category)}</span></span></div>` : ""}
     </div>
     <div class="creativefyi-actions">
-      <a class="creativefyi-link" href="${emojiUrl}" target="_blank" rel="noopener">
+      <a class="creativefyi-link" href="${emojiUrl}" target="_blank" rel="nofollow noopener">
         View on ${escapeHTML(config.name)} ${externalLinkIcon}
       </a>
     </div>
@@ -1084,7 +1084,7 @@ function renderSymbol(container, data, config) {
       ${keywordPills ? `<div class="creativefyi-pills-row">${keywordPills}</div>` : ""}
     </div>
     <div class="creativefyi-actions">
-      <a class="creativefyi-link" href="${symbolUrl}" target="_blank" rel="noopener">
+      <a class="creativefyi-link" href="${symbolUrl}" target="_blank" rel="nofollow noopener">
         View on ${escapeHTML(config.name)} ${externalLinkIcon}
       </a>
     </div>
@@ -1128,7 +1128,7 @@ function renderUnicode(container, data, config) {
       ${data.general_category ? `<div class="creativefyi-kv-row"><span class="creativefyi-kv-key">Category</span><span class="creativefyi-kv-val"><span class="creativefyi-badge">${escapeHTML(data.general_category)}</span></span></div>` : ""}
     </div>
     <div class="creativefyi-actions">
-      <a class="creativefyi-link" href="${unicodeUrl}" target="_blank" rel="noopener">
+      <a class="creativefyi-link" href="${unicodeUrl}" target="_blank" rel="nofollow noopener">
         View on ${escapeHTML(config.name)} ${externalLinkIcon}
       </a>
     </div>
@@ -1215,7 +1215,7 @@ function initEntityWidget(el, config) {
               </div>
             </div>
             <div class="creativefyi-actions">
-              <a class="creativefyi-link" href="${entityUrl}" target="_blank" rel="noopener">
+              <a class="creativefyi-link" href="${entityUrl}" target="_blank" rel="nofollow noopener">
                 View on ${escapeHTML(config.name)} ${externalLinkIcon}
               </a>
             </div>
@@ -1324,7 +1324,7 @@ function initCompareWidget(el, config) {
                 ${entities.map(
       (e) => `
                   <th class="creativefyi-compare-th" style="width:${colWidth}%">
-                    <a href="${buildEntityUrl(config, e)}" target="_blank" rel="noopener" class="creativefyi-compare-entity-link">
+                    <a href="${buildEntityUrl(config, e)}" target="_blank" rel="nofollow noopener" class="creativefyi-compare-entity-link">
                       ${escapeHTML2(String(e.name))}
                       ${externalLinkIcon}
                     </a>
@@ -1416,7 +1416,7 @@ function renderGlossary(container, data, config) {
   const glossaryUrl = `https://${config.domain}/glossary/`;
   const category = data.category ? escapeHTML3(data.category) : "";
   const relatedPills = data.related_terms && data.related_terms.length > 0 ? data.related_terms.map(
-    (rt) => `<a class="creativefyi-pill" href="https://${config.domain}/glossary/${escapeHTML3(rt.slug)}/" target="_blank" rel="noopener">${escapeHTML3(rt.name)}</a>`
+    (rt) => `<a class="creativefyi-pill" href="https://${config.domain}/glossary/${escapeHTML3(rt.slug)}/" target="_blank" rel="nofollow noopener">${escapeHTML3(rt.name)}</a>`
   ).join("") : "";
   container.innerHTML = `
     <div class="creativefyi-header">
@@ -1434,10 +1434,10 @@ function renderGlossary(container, data, config) {
     ${relatedPills ? `<div class="creativefyi-pills-row">${relatedPills}</div>` : ""}
 
     <div class="creativefyi-actions">
-      <a class="creativefyi-link" href="${termUrl}" target="_blank" rel="noopener">
+      <a class="creativefyi-link" href="${termUrl}" target="_blank" rel="nofollow noopener">
         ${escapeHTML3(data.name)} ${externalLinkIcon}
       </a>
-      <a class="creativefyi-link" href="${glossaryUrl}" target="_blank" rel="noopener">
+      <a class="creativefyi-link" href="${glossaryUrl}" target="_blank" rel="nofollow noopener">
         Full glossary on ${escapeHTML3(config.name)} ${externalLinkIcon}
       </a>
     </div>
@@ -1473,9 +1473,9 @@ function initGuideWidget(el, config) {
       </div>
       <div class="creativefyi-summary">
         Guides are available on
-        <a href="https://symbolfyi.com/guides/" target="_blank" rel="noopener">SymbolFYI</a>
+        <a href="https://symbolfyi.com/guides/" target="_blank" rel="nofollow noopener">SymbolFYI</a>
         and
-        <a href="https://unicodefyi.com/guides/" target="_blank" rel="noopener">UnicodeFYI</a>.
+        <a href="https://unicodefyi.com/guides/" target="_blank" rel="nofollow noopener">UnicodeFYI</a>.
       </div>
       ${poweredByHTML(config)}
     `;
@@ -1503,7 +1503,7 @@ function initGuideWidget(el, config) {
         </div>
         ${excerpt ? `<p class="creativefyi-summary">${escapeHTML4(excerpt)}</p>` : ""}
         <div class="creativefyi-actions">
-          <a href="${guideUrl}" target="_blank" rel="noopener" class="creativefyi-link">
+          <a href="${guideUrl}" target="_blank" rel="nofollow noopener" class="creativefyi-link">
             Read guide on ${escapeHTML4(config.name)}
             ${externalLinkIcon}
           </a>
@@ -1608,7 +1608,7 @@ function initSearchWidget(el, config) {
           class="creativefyi-search-result-item"
           href="${href}"
           target="_blank"
-          rel="noopener"
+          rel="nofollow noopener"
           role="option"
           tabindex="-1"
         >
@@ -1776,7 +1776,7 @@ function showTooltip(tip, term, anchor, config) {
   tip.innerHTML = `
     <strong style="display:block;margin-bottom:4px;font-size:13px;color:#f8fafc">${escapeHTML6(term.name)}</strong>
     <span style="color:#cbd5e1">${escapeHTML6(term.definition.length > 140 ? term.definition.slice(0, 140) + "\u2026" : term.definition)}</span>
-    <a href="${readMoreUrl}" target="_blank" rel="noopener" style="
+    <a href="${readMoreUrl}" target="_blank" rel="nofollow noopener" style="
       display:inline-block; margin-top:6px; font-size:11px; color:#93c5fd;
       text-decoration:none; pointer-events:auto;
     ">Read more \u2192</a>
